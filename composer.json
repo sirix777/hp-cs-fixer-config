@@ -1,0 +1,54 @@
+{
+    "name": "sirix/php-cs-fixer-config",
+    "description": "Sirix PHP coding standards fixer configuration.",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Petr Romancevic",
+            "email": "sirix@inbox.lv"
+        }
+    ],
+    "require": {
+        "php": "^8.0 || ^8.1 || ^8.2 || ^8.3",
+        "friendsofphp/php-cs-fixer": "^3.52",
+        "gordinskiy/line-length-checker": "^0.0.2",
+        "pedrotroller/php-cs-custom-fixer": "^2.33"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.42",
+        "phpstan/extension-installer": "^1.1.0",
+        "phpstan/phpstan-phpunit": "^1.3.16",
+        "phpunit/phpunit": "^10.5",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sirix\\CsFixerConfig\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sirix\\CsFixerConfig\\Tests\\": "test/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@phpstan",
+            "@test"
+        ],
+        "cs-check": "php vendor/bin/php-cs-fixer fix --dry-run -v --diff",
+        "cs-fix": "php vendor/bin/php-cs-fixer fix -vvv",
+        "phpstan": "php vendor/bin/phpstan analyse",
+        "test": "php vendor/bin/phpunit --testdox",
+        "test-cc": "php vendor/bin/phpunit --coverage-text --colors=never"
+    }
+}
