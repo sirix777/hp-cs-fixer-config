@@ -11,13 +11,13 @@ The recommended way to install PHP CS Fixer is to use Composer in a dedicated co
 1. Create a new tools/php-cs-fixer directory:
 
 ```bash
-    mkdir -p tools/php-cs-fixer
+mkdir -p tools/php-cs-fixer
 ```
 
 2. Install via composer:
 
 ```bash
-    composer req --dev --working-dir=tools/php-cs-fixer sirix/php-cs-fixer-config
+composer req --dev --working-dir=tools/php-cs-fixer sirix/php-cs-fixer-config
 ```
 
     
@@ -69,21 +69,21 @@ or, you can add additional rules to the configuration file:
 
 * Fix coding standards:
 
-    ```bash
-    $ php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix -v
-    ```
+```bash
+$ php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix -v
+```
 
 * Check coding standards without applying the fix:
 
-    ```bash
-    $ php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run
-    ```
+```bash
+$ php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run
+```
 
 * Examine the proposed changes:
 
-    ```bash
-    $ php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run -v --diff
-    ```
+```bash
+$ php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run -v --diff
+```
 
     
 ## Documentation
